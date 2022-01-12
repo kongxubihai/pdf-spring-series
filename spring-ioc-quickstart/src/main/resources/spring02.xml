@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myParent" class="com.crab.spring.demo02.ParentBean" />
+    <bean id="myFactory" class="com.crab.spring.demo02.FactoryBean" />
+
+    <bean id="myChild" class="com.crab.spring.demo02.ChildBean"
+          init-method="init"
+          lazy-init="true"
+          destroy-method="destroy"
+          name="childBean,aliasName"
+          parent="myParent"
+          scope="singleton"
+          primary="true"
+          depends-on="myParent"
+          autowire="byType"
+          autowire-candidate="true"
+          factory-bean="myFactory"
+          factory-method="getObj"
+          abstract="false"
+    ></bean>
+</beans>

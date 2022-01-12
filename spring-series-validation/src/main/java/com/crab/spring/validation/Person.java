@@ -1,0 +1,27 @@
+package com.crab.spring.validation;
+
+/**
+ * @author zfd
+ * @version v1.0
+ * @date 2022/1/12 10:55
+ */
+public class Person {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
