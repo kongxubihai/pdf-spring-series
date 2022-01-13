@@ -1,12 +1,7 @@
-package com.crab.spring.ioc.demo01;
+package com.crab.spring.ioc.demo02;
 
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.function.Consumer;
-
-import static org.junit.Assert.*;
 
 /**
  * @author zfd
@@ -17,9 +12,13 @@ public class Demo01Test {
 
     @Test
     public void test_construct() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("demo01/spring1.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("demo02/spring1.xml");
         BeanOne bean1 = context.getBean("bean1", BeanOne.class);
         System.out.println(bean1);
+
+        System.out.println("演示Setter注入");
+        BeanThree beanThree = context.getBean(BeanThree.class);
+        System.out.println(beanThree);
         context.close();
     }
 }

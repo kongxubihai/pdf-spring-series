@@ -1,4 +1,6 @@
-package com.crab.spring.ioc.demo01;
+package com.crab.spring.ioc.demo02;
+
+import java.beans.ConstructorProperties;
 
 /**
  * @author zfd
@@ -16,6 +18,7 @@ public class BeanOne {
      * @param name
      * @param beanTwo
      */
+    @ConstructorProperties({"age", "name", "beanTwo"})
     public BeanOne(int age, String name, BeanTwo beanTwo) {
         this.age = age;
         this.name = name;

@@ -1,4 +1,4 @@
-package com.crab.spring.ioc.demo01;
+package com.crab.spring.ioc.demo02;
 
 /**
  * @author zfd
