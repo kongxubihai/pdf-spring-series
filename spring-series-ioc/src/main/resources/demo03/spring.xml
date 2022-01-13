@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    基本类型和字符串-->
+    <bean class="com.crab.spring.ioc.demo03.SimpleBean" id="simpleBean">
+        <property name="name" value="xxx"/>
+        <property name="age" value="12"/>
+        <property name="height" value="123.45f"/>
+    </bean>
+    <!--    引用类型-->
+    <bean class="com.crab.spring.ioc.demo03.RefBean" id="refBean"/>
+    <bean class="com.crab.spring.ioc.demo03.MyBean" id="myBean">
+        <property name="refBean">
+            <ref bean="refBean"/>
+        </property>
+    </bean>
+    <!--    内部bean的方式-->
+    <bean class="com.crab.spring.ioc.demo03.MyBean" id="myBean2">
+        <property name="refBean">
+            <bean class="com.crab.spring.ioc.demo03.RefBean"/>
+        </property>
+    </bean>
+    <!--    集合-->
+    <bean class="com.crab.spring.ioc.demo03.ComplexObject" id="complexObject">
+        <property name="adminEmails">
+            <props>
+                <prop key="administrator">administrator@example.org</prop>
+                <prop key="support">support@example.org</prop>
+                <prop key="development">development@example.org</prop>
+            </props>
+        </property>
+        <!-- results in a setSomeList(java.util.List) call -->
+        <property name="someList">
+            <list>
+                <value>a list element followed by a reference</value>
+                <ref bean="myBean"/>
+            </list>
+        </property>
+        <!-- results in a setSomeMap(java.util.Map) call -->
+        <property name="someMap">
+            <map>
+                <entry key="an entry" value="just some string"/>
+                <entry key="a ref" value-ref="myBean"/>
+            </map>
+        </property>
+        <!-- results in a setSomeSet(java.util.Set) call -->
+        <property name="someSet">
+            <set>
+                <value>just some string</value>
+                <ref bean="myBean"/>
+            </set>
+        </property>
+    </bean>
+    <!--    集合合并-->
+    <bean id="parent" abstract="true" class="com.crab.spring.ioc.demo03.ComplexObject">
+        <property name="adminEmails">
+            <props>
+                <prop key="administrator">administrator@example.com</prop>
+                <prop key="support">support@example.com</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="child" parent="parent">
+        <property name="adminEmails">
+            <!-- the merge is specified on the child collection definition -->
+            <props merge="true">
+                <prop key="sales">sales@example.com</prop>
+                <prop key="support">support@example.co.uk</prop>
+            </props>
+        </property>
+    </bean>
+    <!--    集合元素指定类型-->
+    <bean id="accountBean" class="com.crab.spring.ioc.demo03.AccountBean">
+        <property name="accounts">
+            <map>
+                <entry key="one" value="9.99"/>
+                <entry key="two" value="2.75"/>
+                <entry key="six" value="3.99"/>
+            </map>
+        </property>
+    </bean>
+    <!--    `null`和空字符串注入-->
+    <bean class="com.crab.spring.ioc.demo03.EmptyStringBean">
+        <property name="name" value=""/>
+        <property name="code">
+            <null></null>
+        </property>
+    </bean>
+
+    <!--    复合属性-->
+    <bean class="com.crab.spring.ioc.demo03.NestedBean" id="nestedBean">
+        <property name="simpleBean.name" value="xxx"/>
+    </bean>
+
+</beans>
