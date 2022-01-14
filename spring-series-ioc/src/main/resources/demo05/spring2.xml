@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+
+    <bean class="com.crab.spring.ioc.demo05.ServiceB" id="serviceA" autowire="constructor"/>
+
+    <bean class="com.crab.spring.ioc.demo05.RepositoryA"/>
+    <bean class="com.crab.spring.ioc.demo05.RepositoryB"/>
+    <!--不参与自动装配-->
+    <bean class="com.crab.spring.ioc.demo05.RepositoryB" id="repositoryB2" autowire-candidate="false"/>
+    <!--主要候选人-->
+    <bean class="com.crab.spring.ioc.demo05.RepositoryB" id="repositoryB3" primary="true"/>
+
+
+</beans>
