@@ -1,5 +1,6 @@
 package com.crab.spring.ioc.demo06;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +10,8 @@ import org.springframework.stereotype.Component;
  * @date 2022/1/14 11:52
  * @关于我 请关注公众号 螃蟹的Java笔记 获取更多技术系列
  */
-@Component("repositoryB")
-@Order(-1)
-public class RepositoryB  implements RepositoryBase {
+@Component
+@Order(-2)
+@Primary
+public class RepositoryC implements RepositoryBase{
 }
