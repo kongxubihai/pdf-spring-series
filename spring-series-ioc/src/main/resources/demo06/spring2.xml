@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+">
+    <!--注解配置启用-->
+    <context:annotation-config></context:annotation-config>
+
+    <bean class="com.crab.spring.ioc.demo06.BeanOne" id="beanOne">
+        <!--可以通过常规的依赖注入方式注入-->
+    </bean>
+    <!--依赖是通过注解自动注入的-->
+    <bean class="com.crab.spring.ioc.demo06.BeanTwo" id="beanTwo"/>
+
+</beans>

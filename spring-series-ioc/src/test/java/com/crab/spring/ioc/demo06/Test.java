@@ -13,6 +13,15 @@ import java.util.Arrays;
 public class Test {
 
     @org.junit.Test
+    public void test_annotation_config() {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("demo06/spring2.xml");
+        BeanTwo beanTwo = context.getBean(BeanTwo.class);
+        System.out.println(beanTwo);
+        context.close();
+    }
+
+
+    @org.junit.Test
     public void test() {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("demo06/spring1.xml");
         ServiceA serviceA = context.getBean(ServiceA.class);
