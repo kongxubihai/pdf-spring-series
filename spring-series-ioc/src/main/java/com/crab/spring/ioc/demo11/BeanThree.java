@@ -1,6 +1,8 @@
 package com.crab.spring.ioc.demo11;
 
 import org.springframework.beans.factory.DisposableBean;
+import org.springframework.context.EnvironmentAware;
+import org.springframework.core.env.Environment;
 
 import javax.annotation.PreDestroy;
 
@@ -17,13 +19,17 @@ public class BeanThree implements DisposableBean {
     public void destroy() throws Exception {
         System.out.println("BeanThree DisposableBean destroy");
     }
+
     // 方式2 xml中配置destroy-method
-    public void destroy2(){
+    public void destroy2() {
         System.out.println("BeanThree destroy-method destroy3");
     }
+
     // 方式3 使用 @PreDestroy 注解
     @PreDestroy
-    public void destroy3(){
+    public void destroy3() {
         System.out.println("BeanThree @PreDestroy destroy3");
     }
+
+
 }
