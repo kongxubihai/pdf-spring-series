@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="prod"
+        xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.crab.spring.ioc.demo13.DataSource" id="dataSource">
+        <property name="type" value="mysql"/>
+        <property name="url" value="jdbc:mysql/xxxxx"/>
+    </bean>
+
+</beans>
