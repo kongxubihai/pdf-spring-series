@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.crab.spring.ioc.demo20.MyBean" id="myBean">
+        <!--SpeL调用类静态方法-->
+        <property name="randomNumber" value="#{ T(java.lang.Math).random() * 100.0 }"/>
+        <!--SpeL读取系统属性中的用户名-->
+        <property name="name" value="#{ systemProperties['user.name']}"/>
+    </bean>
+
+    <!-- 引用别的bean的属性-->
+    <bean class="com.crab.spring.ioc.demo20.MyBean" id="myBean2">
+        <!--@引用bean实例 其实所有注入容器的bean都是预定义变量，不需要@也行-->
+        <property name="name" value="#{@myBean.randomNumber}"/>
+        <property name="randomNumber" value="#{myBean.randomNumber}"/>
+    </bean>
+</beans>
