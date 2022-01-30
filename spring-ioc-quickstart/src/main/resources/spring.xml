@@ -4,11 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--A的定义信息-->
-    <bean id="a" class="com.crab.spring.demo01.A">
+    <bean id="a" class="com.crab.spring.aop.demo01.A">
         <!--注入B对象依赖-->
         <property name="b" ref="b"/>
     </bean>
 
     <!--B的定义信息-->
-    <bean id="b" class="com.crab.spring.demo01.B"  ></bean>
+    <bean id="b" class="com.crab.spring.aop.demo01.B"  ></bean>
 </beans>

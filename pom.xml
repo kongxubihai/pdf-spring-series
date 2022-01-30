@@ -14,6 +14,7 @@
         <module>spring-series-base</module>
         <module>spring-series-validation</module>
         <module>spring-series-ioc</module>
+        <module>spring-series-aop</module>
     </modules>
 
     <properties>
