@@ -1,21 +1,18 @@
 package com.crab.spring.aop.demo01;
 
+import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * @author zfd
  * @version v1.0
- * @date 2022/1/29 11:57
+ * @date 2022/2/3 14:28
  * @关于我 请关注公众号 螃蟹的Java笔记 获取更多技术系列
  */
-@Configuration
-@ComponentScan
-@EnableAspectJAutoProxy()
-public class AppConfig {
-    public static void main(String[] args) {
+public class AppConfigTest {
+
+    @Test
+    public void m() {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(AppConfig.class);
         IService bean = context.getBean(IService.class);

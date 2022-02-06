@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
  * @关于我 请关注公众号 螃蟹的Java笔记 获取更多技术系列
  */
 @Component
-@Aspect // 切面
+@Aspect() // 切面
 public class MyAspect {
 
     /**
