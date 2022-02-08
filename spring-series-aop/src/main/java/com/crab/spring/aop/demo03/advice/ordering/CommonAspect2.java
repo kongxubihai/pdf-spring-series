@@ -5,6 +5,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;
 import org.springframework.core.Ordered;
+import org.springframework.stereotype.Component;
 
 /**
  * 同一个切面内不同通知类型的顺序
@@ -14,6 +15,7 @@ import org.springframework.core.Ordered;
  * @关于我 请关注公众号 螃蟹的Java笔记 获取更多技术系列
  */
 @Aspect // 切面
+@Component
 public class CommonAspect2  implements Ordered {
     // 切面排序
     @Override

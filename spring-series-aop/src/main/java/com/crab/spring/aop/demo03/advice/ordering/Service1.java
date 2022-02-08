@@ -1,11 +1,14 @@
 package com.crab.spring.aop.demo03.advice.ordering;
 
+import org.springframework.stereotype.Service;
+
 /**
  * @author zfd
  * @version v1.0
  * @date 2022/2/7 11:31
  * @关于我 请关注公众号 螃蟹的Java笔记 获取更多技术系列
  */
+@Service
 public class Service1 {
     /**
      * 正常执行的方法
