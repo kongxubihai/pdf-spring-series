@@ -8,4 +8,5 @@ package com.crab.spring.aop.demo01;
  */
 public interface IService {
     void add(String name);
+    void hello(String name);
 }

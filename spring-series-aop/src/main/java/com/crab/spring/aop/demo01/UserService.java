@@ -15,4 +15,9 @@ public class UserService implements IService {
         // System.out.println("我是前置通知!开始执行方法：" + "add");
         System.out.println("UserService add " + name);
     }
+
+    @Override
+    public void hello(String name) {
+        System.out.println("hello " + name);
+    }
 }

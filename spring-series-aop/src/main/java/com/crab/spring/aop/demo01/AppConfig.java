@@ -19,6 +19,7 @@ public class AppConfig {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(AppConfig.class);
         IService bean = context.getBean(IService.class);
+        System.out.println("bean的类型：" + bean.getClass());
         bean.add("xxx");
         context.close();
     }

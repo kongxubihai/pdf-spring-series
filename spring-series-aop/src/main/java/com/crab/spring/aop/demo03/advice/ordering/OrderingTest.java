@@ -19,7 +19,8 @@ public class OrderingTest {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(OrderingTest.class);
         Service1 service1 = context.getBean(Service1.class);
-        service1.hello("xxx");
+        // service1.hello("xxx");
+        service1.throwException();
         context.close();
     }
 }

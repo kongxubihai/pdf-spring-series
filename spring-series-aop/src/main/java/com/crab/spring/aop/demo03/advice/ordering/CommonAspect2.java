@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 同一个切面内不同通知类型的顺序
+ *
  * @author zfd
  * @version v1.0
  * @date 2022/2/7 11:34
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Component;
  */
 @Aspect // 切面
 @Component
-public class CommonAspect2  implements Ordered {
+public class CommonAspect2 implements Ordered {
     // 切面排序
     @Override
     public int getOrder() {
@@ -25,10 +26,10 @@ public class CommonAspect2  implements Ordered {
 
     /**
      * 公共切点
-     *  匹配Service1的所有方法
+     * 匹配Service1的所有方法
      */
     @Pointcut("execution(* com.crab.spring.aop.demo03.advice.ordering.Service1.*(..))")
-    public void pc(){
+    public void pc() {
 
     }
 
@@ -36,32 +37,32 @@ public class CommonAspect2  implements Ordered {
      * 前置通知
      */
     @Before("pc()")
-    public void before(JoinPoint joinpoint){
-        System.out.println("Before2: " +  joinpoint);
+    public void before(JoinPoint joinpoint) {
+        System.out.println("Before2: " + joinpoint);
     }
 
     /**
      * 返回通知
      */
     @AfterReturning("pc()")
-    public void afterReturning(JoinPoint joinpoint){
-        System.out.println("AfterReturning2: " +  joinpoint);
+    public void afterReturning(JoinPoint joinpoint) {
+        System.out.println("AfterReturning2: " + joinpoint);
     }
 
     /**
      * 抛出异常通知
      */
     @AfterThrowing("pc()")
-    public void afterThrowing(JoinPoint joinpoint){
-        System.out.println("AfterThrowing2: " +  joinpoint);
+    public void afterThrowing(JoinPoint joinpoint) {
+        System.out.println("AfterThrowing2: " + joinpoint);
     }
 
     /**
      * 最终通知
      */
     @After("pc()")
-    public void after(JoinPoint joinpoint){
-        System.out.println("After2: " +  joinpoint);
+    public void after(JoinPoint joinpoint) {
+        System.out.println("After2: " + joinpoint);
     }
 
     /**

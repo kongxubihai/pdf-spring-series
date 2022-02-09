@@ -1,9 +1,12 @@
-package com.crab.spring.aop.demo02;
+package com.crab.spring.aop.demo01;
 
 import org.junit.Test;
 import org.springframework.aop.MethodBeforeAdvice;
 import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;
-import org.springframework.aop.framework.*;
+import org.springframework.aop.framework.AdvisedSupport;
+import org.springframework.aop.framework.AopProxy;
+import org.springframework.aop.framework.DefaultAopProxyFactory;
+import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.lang.reflect.Method;
@@ -91,7 +94,7 @@ public class AopCreateTest1 {
         proxyFactory.setTarget(target);
         proxyFactory.setInterfaces(IService.class);
         // 设置切面 含通知和切点
-        proxyFactory.addAspect(UserAspect.class);
+        proxyFactory.addAspect(MyAspect.class);
 
         // 3 创建代理对象
         IService proxy = proxyFactory.getProxy();
