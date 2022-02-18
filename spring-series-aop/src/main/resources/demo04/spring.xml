@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--上面要引入aop的命名空间-->
+
+    <!--AOP配置-->
+    <aop:config>
+        <!--切面-->
+        <aop:aspect id="operationExecutorAspect" ref="operationExecutor" >
+            <!--切点 ConcurrentService所有幂等方法带@Idempotent-->
+            <aop:pointcut id="idempotentOperator"
+                          expression="execution(* com.crab.spring.aop.demo04.example.ConcurrentService.*(..)) and
+             @annotation(com.crab.spring.aop.demo04.example.Idempotent)"/>
+            <!--环绕通知-->
+            <aop:around method="doConcurrentOperation" pointcut-ref="idempotentOperator"/>
+        </aop:aspect>
+    </aop:config>
+
+    <!--切面bean和目标bean 普通注入方式-->
+    <bean class="com.crab.spring.aop.demo04.example.ConcurrentOperationExecutor" id="operationExecutor">
+        <property name="maxRetries" value="3"/>
+        <property name="order" value="1"/>
+    </bean>
+    <bean id="concurrentService" class="com.crab.spring.aop.demo04.example.ConcurrentService"/>
+</beans>

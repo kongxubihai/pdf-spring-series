@@ -15,6 +15,10 @@
         <module>spring-series-validation</module>
         <module>spring-series-ioc</module>
         <module>spring-series-aop</module>
+        <module>spring-series-mvc</module>
+        <module>mvc-helloworld</module>
+        <module>mvc-helloworld2</module>
+        <module>mvc-helloworld2</module>
     </modules>
 
     <properties>
@@ -94,6 +98,21 @@
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-jdbc</artifactId>
                 <version>${tomcat.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>4.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>javax.servlet.jsp-api</artifactId>
+                <version>2.3.3</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
