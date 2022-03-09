@@ -1,0 +1,9 @@
+package com.crab.spring.ioc.demo21.module2;
+
+/**
+ * @author zfd
+ * @version v1.0
+ * @date 2022/3/3 17:00
+ */
+public class Service2 {
+}
