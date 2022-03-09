@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.crab</groupId>
@@ -26,7 +24,7 @@
         <maven.compiler.target>8</maven.compiler.target>
         <spring.version>5.2.19.RELEASE</spring.version>
         <lombok.version>1.18.10</lombok.version>
-        <junit.version>4.13</junit.version>
+        <junit.version>4.13.1</junit.version>
         <logback.version>1.2.3</logback.version>
         <aspectj.version>1.9.5</aspectj.version>
         <redisson.version>3.13.3</redisson.version>
