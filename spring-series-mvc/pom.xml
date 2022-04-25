@@ -13,8 +13,7 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>mvc-helloworld</module>
-        <module>mvc-helloworld2</module>
+        <module>spring-mvc-template</module>
     </modules>
 
 
