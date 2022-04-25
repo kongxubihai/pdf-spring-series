@@ -1,5 +1,7 @@
 package com.crab.mvc.controller;
 
+import com.crab.mvc.service.HelloService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,8 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class MyRestController {
+    @Autowired
+    private HelloService helloService;
+
     @GetMapping("/test")
     public String test() {
-        return "test";
+        return helloService.getName("xxx");
     }
 }
